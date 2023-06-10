@@ -6,20 +6,19 @@
 package org.interfaces;
 
 import java.util.List;
-import org.model.ModelKardex;
+import org.model.ModelProducto;
 
-
-public interface CrudKardex {
+public interface CrudProducto {
 
     public List listar(String buscar);
 
-    public ModelKardex list(int id);
+    public ModelProducto list(int id);
 
-    public boolean insertar(ModelKardex idKardex);
+    public boolean insertar(ModelProducto idProducto);
 
-    public boolean modificar(ModelKardex idKardex);
+    public boolean modificar(ModelProducto idProducto);
 
-    public boolean eliminar(ModelKardex idKardex);
+    public boolean eliminar(ModelProducto idProducto);
 
   
 }

@@ -8,10 +8,6 @@ package org.interfaces;
 import java.util.List;
 import org.model.ModelUsuario;
 
-/**
- *
- * @author josef
- */
 public interface CrudUsuario {
 
     public List listar(String buscar);
