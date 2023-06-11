@@ -11,7 +11,7 @@ import org.model.ModelKardex;
 
 public interface CrudKardex {
 
-    public List listar(String buscar);
+    public List listar();
 
     public ModelKardex list(int id);
 
