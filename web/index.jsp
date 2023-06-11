@@ -100,20 +100,20 @@ List<ModelKardex> kardexList = kardex.listar();
                             <h1 class="h3 mt-3 text-gray-800">Listado kardex</h1>
                             <div class="mt-5">
                                 <div class="modal-body">
-                                    <form action="${pageContext.request.contextPath}/ServiceKardex?action=insertar"
+                                    <form action="${pageContext.request.contextPath}/ControllerKardex?action=insert"
                                         method='post'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="ID_PRODUCTO">Producto</label>
                                                 <select name="ID_PRODUCTO" class="form-control">
-                                                    <option selected value='A'>algo</option>
+                                                    <option selected value='1'>algo</option>
                                                     <option value='S'>mas</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="ID_TIPO_MOVIMIENTO">Tipo de movimiento</label>
                                                 <select name="ID_TIPO_MOVIMIENTO" class="form-control">
-                                                    <option selected value='A'>Entrada de inventario</option>
+                                                    <option selected value='2'>Entrada de inventario</option>
                                                     <option value='S'>Salida de inventario</option>
                                                 </select>
                                             </div>
@@ -127,7 +127,7 @@ List<ModelKardex> kardexList = kardex.listar();
                                             <div class="form-group col-md-6">
                                                 <label for="ID_USUARIO">Usuario</label>
                                                 <select name="ID_USUARIO" class="form-control">
-                                                    <option selected value='lrperezc'>lrperezc</option>
+                                                    <option selected value='3'>lrperezc</option>
                                                     <option value='S'>mas</option>
                                                 </select>
                                             </div>
