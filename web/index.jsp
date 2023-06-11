@@ -1,5 +1,15 @@
 <%-- Document : index Created on : 10/06/2023, 05:15:05 PM Author : Usuario --%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.model.ModelKardex"%>
+<%@page import="org.services.ServiceKardex"%>
+<%
+ ServiceKardex kardex = new ServiceKardex();
+ 
+List<ModelKardex> kardexList = kardex.listar();
+ 
 
+%>
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html lang="en">
@@ -90,19 +100,19 @@
                             <h1 class="h3 mt-3 text-gray-800">Listado kardex</h1>
                             <div class="mt-5">
                                 <div class="modal-body">
-                                    <form action="${pageContext.request.contextPath}/actions?act=insertUser"
+                                    <form action="${pageContext.request.contextPath}/ServiceKardex?action=insertar"
                                         method='post'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="product">Producto</label>
-                                                <select name="product" class="form-control">
+                                                <label for="ID_PRODUCTO">Producto</label>
+                                                <select name="ID_PRODUCTO" class="form-control">
                                                     <option selected value='A'>algo</option>
                                                     <option value='S'>mas</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="moveType">Tipo de movimiento</label>
-                                                <select name="movetype" class="form-control">
+                                                <label for="ID_TIPO_MOVIMIENTO">Tipo de movimiento</label>
+                                                <select name="ID_TIPO_MOVIMIENTO" class="form-control">
                                                     <option selected value='A'>Entrada de inventario</option>
                                                     <option value='S'>Salida de inventario</option>
                                                 </select>
@@ -110,22 +120,22 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="quantity">Cantidad</label>
-                                                <input type="number" class="form-control" name="quantity"
+                                                <label for="CANTIDAD">Cantidad</label>
+                                                <input type="number" class="form-control" name="CANTIDAD"
                                                     placeholder="1">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="user">Usuario</label>
-                                                <select name="user" class="form-control">
-                                                    <option selected value='A'>lrperezc</option>
+                                                <label for="ID_USUARIO">Usuario</label>
+                                                <select name="ID_USUARIO" class="form-control">
+                                                    <option selected value='lrperezc'>lrperezc</option>
                                                     <option value='S'>mas</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="comments">Comentarios</label>
-                                                <input type="text" class="form-control" name="cpmments"
+                                                <label for="DESCRIPCION">Comentarios</label>
+                                                <input type="text" class="form-control" name="DESCRIPCION"
                                                     placeholder="Comentarios (descripcion)">
                                             </div>
                                         </div>
@@ -160,18 +170,18 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-
+                                                  <% for(ModelKardex kar : kardexList){%>
                                                     <tr>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
+                                                        <th><% out.print(kar.getIdKardex()); %></th>
+                                                        <th><% out.print(kar.getIdUsuario()); %></th>
+                                                        <th><% out.print(kar.getIdProducto()); %></th>
+                                                        <th><% out.print(kar.getIdTipoMovimiento()); %></th>
+                                                        <th><% out.print(kar.getCantidad()); %></th>
+                                                        <th><% out.print(kar.getExistencia()); %></th>
+                                                        <th><% out.print(kar.getSaldo()); %></th>
+                                                        <th><% out.print(kar.getFecha()); %></th>
                                                     </tr>
-
+                                                   <%}%>
 
                                                 </tbody>
                                             </table>

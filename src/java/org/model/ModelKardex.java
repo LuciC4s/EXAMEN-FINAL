@@ -18,7 +18,7 @@ public class ModelKardex {
     private int existencia;
     private int saldo;
     private String desccripcion;
-    private int fecha;
+    private String fecha;
 
     public int getIdKardex() {
         return idKardex;
@@ -84,15 +84,15 @@ public class ModelKardex {
         this.desccripcion = desccripcion;
     }
 
-    public int getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(int fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public ModelKardex(int idKardex, int idUsuario, int idProducto, int idTipoMovimiento, int cantidad, int existencia, int saldo, String desccripcion, int fecha) {
+    public ModelKardex(int idKardex, int idUsuario, int idProducto, int idTipoMovimiento, int cantidad, int existencia, int saldo, String desccripcion, String fecha) {
         this.idKardex = idKardex;
         this.idUsuario = idUsuario;
         this.idProducto = idProducto;
@@ -106,6 +106,13 @@ public class ModelKardex {
 
     public ModelKardex() {
     }
+
+    @Override
+    public String toString() {
+        return "ModelKardex{" + "idKardex=" + idKardex + ", idUsuario=" + idUsuario + ", idProducto=" + idProducto + ", idTipoMovimiento=" + idTipoMovimiento + ", cantidad=" + cantidad + ", existencia=" + existencia + ", saldo=" + saldo + ", desccripcion=" + desccripcion + ", fecha=" + fecha + '}';
+    }
+    
+    
     
     
 }

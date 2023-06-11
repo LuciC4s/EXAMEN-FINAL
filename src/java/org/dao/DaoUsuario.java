@@ -86,7 +86,7 @@ public class DaoUsuario implements CrudUsuario{
     @Override
     public boolean insertar(ModelUsuario usuario) {
      //Se prepara la sentencia SQL a ejecutar en la BD
-    String    strSql2 = "INSERT INTO USUARIO (ID_USUARIO, NOMBRE, USUARIO, CLAVE, ESTADO) "
+    String strSql2 = "INSERT INTO USUARIO (ID_USUARIO, NOMBRE, USUARIO, CLAVE, ESTADO) "
                 + "VALUES ( (SELECT ISNULL(MAX(ID_USUARIO),0) + 1 FROM USUARIO), " +                   
                  "'" + usuario.getNombre() + "', " +                 
                 "'" + usuario.getUsuario()+ "', " +       
